@@ -1,4 +1,4 @@
-package fib;
+package com.tyler;
 
 /**
  * 八皇后问题
