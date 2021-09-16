@@ -1,5 +1,7 @@
 package 代码随想录.数组.滑动窗口;
 
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,10 +9,6 @@ import java.util.Map;
  * 904. 水果成篮
  */
 public class LeetCode904 {
-
-    public static void main(String[] args) {
-        new LeetCode904().totalFruit(new int[]{3, 3, 3, 1, 2, 1, 1, 2, 3, 3, 4});
-    }
 
     public int totalFruit(int[] fruits) {
         int[] count = new int[fruits.length];
@@ -34,7 +32,6 @@ public class LeetCode904 {
             right++;
             max = Math.max(max, right - left);
         }
-
         return max;
     }
 }
