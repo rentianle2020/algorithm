@@ -43,4 +43,13 @@ public class LeetCode559 {
         }
         return max + 1;
     }
+
+    public int maxDepth2(Node root) {
+        if(root == null) return 0;
+        OptionalInt max = OptionalInt.empty();
+        if (root.children != null) {
+            max = root.children.stream().mapToInt(this::maxDepth2).max();
+        }
+        return max.isPresent() ? max.getAsInt() + 1 : 1;
+    }
 }
