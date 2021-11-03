@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.stream.Stream;
@@ -16,18 +17,12 @@ public class Test {
 
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        try{
-            new Test().tt();
-        }catch (Exception e){
-            e.fillInStackTrace();
-            e.printStackTrace();
+        Integer[] list = new Integer[]{1,2,3,4,5};
+        Arrays.sort(list,(a,b) -> b - a);
+
+        for (Integer integer : list) {
+            System.out.println(integer);
         }
-
-
-
     }
 
-    public void tt(){
-        throw new RuntimeException("123");
-    }
 }
