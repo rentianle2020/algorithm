@@ -1,5 +1,7 @@
 package 代码随想录.回溯;
 
+import 代码随想录.哈希表.LeetCode18;
+
 import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
@@ -9,61 +11,37 @@ import java.util.List;
  */
 public class LeetCode17 {
 
-    List<List<Character>> lettersList = new LinkedList<>();
+    public static void main(String[] args) {
+        new LeetCode17().letterCombinations("23");
+    }
+
+
     List<String> result = new LinkedList<>();
-    StringBuilder path = new StringBuilder();
+    String[] letters = new String[]{"","","abc","def","ghi","jkl","mno","pqrs","tuo","wxyz"};
 
     public List<String> letterCombinations(String digits) {
-        if(digits.length() == 0) return result;
+        if(digits == null || digits.length() == 0) return result;
 
-        for (int i = 0; i < digits.length(); i++) {
-            List<Character> letters = getLetters(Character.getNumericValue(digits.charAt(i)));
-            lettersList.add(letters);
-        }
+        backtracking(digits,0);
 
-        int k = lettersList.size();
-        backtracking(k,0);
         return result;
     }
 
-    private void backtracking(int k, int startIndex) {
-        if(path.length() == k) {
-            result.add(path.toString());
+    StringBuilder temp = new StringBuilder();
+
+    private void backtracking(String digits, int index) {
+
+        if(index == digits.length()){
+            result.add(temp.toString());
             return;
         }
 
-        for (int i = startIndex; i < lettersList.size(); i++) {
-            List<Character> fistList = lettersList.get(i);
-            for (Character character : fistList) {
-                String s = String.valueOf(character);
-                path.append(s);
-                backtracking(k, i + 1);
-                path.deleteCharAt(path.length() - 1);
-            }
+        String letter = letters[digits.charAt(index) - '0'];
+        for (int i = 0; i < letter.length(); i++) {
+            temp.append(letter.charAt(i));
+            backtracking(digits,index + 1);
+            temp.deleteCharAt(temp.length() - 1);
         }
     }
 
-
-    public List<Character> getLetters(Integer digit){
-
-        char a = 97;
-
-        a += (digit - 2) * 3;
-
-        if(digit == 8 || digit == 9){
-            a++;
-        }
-
-        char b = (char) (a + 1);
-        char c = (char) (a + 2);
-
-        List<Character> list = new java.util.ArrayList<>(List.of(a, b, c));
-
-        if(digit == 7 || digit == 9){
-            char d = (char) (a + 3);
-            list.add(d);
-        }
-
-        return list;
-    }
 }
