@@ -1,4 +1,4 @@
-package com.tyler;
+package 学习;
 
 /**
  * 串 蛮力算法

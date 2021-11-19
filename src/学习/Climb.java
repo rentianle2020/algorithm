@@ -1,6 +1,6 @@
-package com.tyler;
+package 学习;
 
-import util.TimeMachine;
+import 学习.util.TimeMachine;
 
 /**
  * 爬楼梯，每次可以爬1阶或2阶台阶，多少种爬法到n阶

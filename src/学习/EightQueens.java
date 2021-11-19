@@ -1,4 +1,4 @@
-package com.tyler;
+package 学习;
 
 /**
  * 八皇后问题

@@ -1,9 +1,5 @@
-package util;
+package 学习.util;
 
-import java.time.LocalTime;
-import java.util.Date;
-import java.util.function.Consumer;
-import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class TimeMachine {
