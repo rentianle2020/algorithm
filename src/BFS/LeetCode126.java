@@ -3,6 +3,11 @@ package BFS;
 import java.util.*;
 
 public class LeetCode126 {
+    public static void main(String[] args) {
+        int[][] ints = new int[4][];
+        ints[3][1] = 1;
+        System.out.println(ints[3][1]);
+    }
 
     public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
 
