@@ -1,4 +1,4 @@
-package 二分搜索;
+package 二分法;
 
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.RoundEnvironment;
@@ -9,7 +9,6 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.lang.reflect.Method;
 import java.util.Comparator;
-import java.util.EnumSet;
 import java.util.PriorityQueue;
 import java.util.Set;
 

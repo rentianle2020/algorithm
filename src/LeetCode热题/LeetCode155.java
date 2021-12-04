@@ -20,7 +20,6 @@ class MinStack {
         minStack.push(-3);
         System.out.println(minStack.getMin());
     }
-    //TODO
 
     int min = Integer.MAX_VALUE;
     LinkedList<Integer> stack = new LinkedList<>();

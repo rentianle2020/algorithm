@@ -7,11 +7,6 @@ import java.util.ArrayList;
  */
 public class LeetCode501 {
 
-    public static void main(String[] args) {
-        TreeNode node = new TreeNode(1);
-        node.right = new TreeNode(2);
-        System.out.println(new LeetCode501().findMode(node));
-    }
 
     ArrayList<Integer> result = new ArrayList<>();
 

@@ -11,29 +11,27 @@ public class LeetCode173 {
 
 class BSTIterator {
 
-    List<Integer> list = new ArrayList<>();
-    int index = 0;
+    LinkedList<TreeNode> stack;
 
     public BSTIterator(TreeNode root) {
-
-        LinkedList<TreeNode> stack = new LinkedList<>();
-        while(root != null || !stack.isEmpty()){
-            while(root != null){
-                stack.push(root);
-                root = root.left;
-            }
-
-            TreeNode pop = stack.pop();
-            list.add(pop.val);
-            root = pop.right;
-        }
+        stack = new LinkedList<>();
+        pushAllLeft(root);
     }
 
     public int next() {
-        return list.get(index++);
+        TreeNode pop = stack.pop();
+        pushAllLeft(pop.right);
+        return pop.val;
     }
 
     public boolean hasNext() {
-        return list.size() > index;
+        return stack.isEmpty();
+    }
+
+    private void pushAllLeft(TreeNode root){
+        while(root != null){
+            stack.push(root);
+            root = root.left;
+        }
     }
 }
